@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "https://raw.githubusercontent.com/V-Catherine/table_annovar-nf/master/nextflow_schema.json",
-    "title": "Nextflow pipeline parameters",
+    "title": "Table annovar pipeline parameters",
     "description": "This pipeline uses Nextflow and processes some kind of data. The JSON Schema was built using the nf-core pipeline schema builder.",
     "type": "object",
     "definitions": {
