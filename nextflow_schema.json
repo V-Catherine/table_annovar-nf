@@ -1,0 +1,91 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "https://raw.githubusercontent.com/V-Catherine/table_annovar-nf/master/nextflow_schema.json",
+    "title": "Nextflow pipeline parameters",
+    "description": "This pipeline uses Nextflow and processes some kind of data. The JSON Schema was built using the nf-core pipeline schema builder.",
+    "type": "object",
+    "definitions": {
+        "input_output_parameters": {
+            "title": "input_output_parameters",
+            "type": "object",
+            "description": "Input and output parameters",
+            "default": "",
+            "properties": {
+                "table_folder": {
+                    "type": "string",
+                    "description": "Folder containing tables to process"
+                },
+                "table_extension": {
+                    "type": "string",
+                    "description": "Extension of input tables"
+                },
+                "output_folder": {
+                    "type": "string",
+                    "description": "Folder to output resulting compressed vcf"
+                }
+            }
+        },
+        "computing_parameters": {
+            "title": "computing_parameters",
+            "type": "object",
+            "description": "Memory and cpu parameters",
+            "default": "",
+            "properties": {
+                "mem": {
+                    "type": "integer",
+                    "description": "Size of memory used"
+                },
+                "cpu": {
+                    "type": "integer",
+                    "description": "Number of cpus to use"
+                }
+            }
+        },
+        "reference_parameters": {
+            "title": "Reference_parameters",
+            "type": "object",
+            "description": "Reference parameters",
+            "default": "",
+            "properties": {
+                "annovar_db": {
+                    "type": "string",
+                    "description": "Folder with annovar databases"
+                },
+                "buildver": {
+                    "type": "string",
+                    "description": "Version of genome build"
+                }
+            }
+        },
+        "pipeline_parameters": {
+            "title": "pipeline_parameters",
+            "type": "object",
+            "description": "Pipeline parameters",
+            "default": "",
+            "properties": {
+                "annovar_params": {
+                    "type": "string",
+                    "description": "Parameters given to table_annovar.pl"
+                },
+                "help": {
+                    "type": "boolean",
+                    "description": "Displays help"
+                }
+            }
+        }
+    },
+    "allOf": [
+        {
+            "$ref": "#/definitions/input_output_parameters"
+        },
+        {
+            "$ref": "#/definitions/computing_parameters"
+        },
+        {
+            "$ref": "#/definitions/reference_parameters"
+        },
+        {
+            "$ref": "#/definitions/pipeline_parameters"
+        }
+    ]
+}
